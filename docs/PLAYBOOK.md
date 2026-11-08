@@ -22,6 +22,10 @@ Live status lives on the GitHub Project board. This file holds the plan and the 
 
 **Stack (all free):** React + Vite + TypeScript, Tailwind CSS, Node + Express, PostgreSQL (Neon free tier), Vitest + Supertest, GitHub Actions. Deploy: frontend on Vercel, API on Render free tier.
 
+## Learning links (free)
+- **Tailwind CSS:** read [Styling with utility classes](https://tailwindcss.com/docs/styling-with-utility-classes) (30 min), then practise in the browser at [Tailwind Play](https://play.tailwindcss.com). Setup for our app: [Using Vite](https://tailwindcss.com/docs/installation/using-vite).
+- **Stuck on a concept?** Ask Claude: "Explain [concept] simply, with a small example, then quiz me."
+
 ---
 
 ## 2. Team and roles
