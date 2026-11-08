@@ -38,6 +38,46 @@ sequenceDiagram
     FE-->>U: Shows the new spot page
 ```
 
+## Full flow with a photo: create, then read back
+
+Who does what. Photos are a "Later" feature, but this shows the whole picture.
+
+```mermaid
+sequenceDiagram
+    actor U as User
+    participant FE as React (browser)
+    participant BE as Express API
+    participant IMG as Image storage
+    participant DB as PostgreSQL
+
+    rect rgb(255, 243, 191)
+    Note over U,DB: CREATE
+    U->>FE: 1. Fill form + photo, click Save
+    FE->>BE: 2. POST /api/spots (data + photo)
+    BE->>BE: 3. Check login + validate input
+    BE->>IMG: 4. Upload photo
+    IMG-->>BE: photo URL
+    BE->>DB: 5. INSERT spot (with image_url)
+    DB-->>BE: new row (id 43)
+    BE-->>FE: 6. 201 Created + spot JSON
+    FE->>FE: 7. Go to /spots/43
+    end
+
+    rect rgb(211, 249, 216)
+    Note over U,DB: READ BACK
+    FE->>BE: 8. GET /api/spots/43
+    BE->>DB: 9. SELECT spot + reviews
+    DB-->>BE: rows
+    BE-->>FE: 10. 200 OK + spot JSON
+    FE-->>U: 11. Show the spot page (photo loads from image storage)
+    end
+```
+
+Key ideas:
+- The **browser never talks to the database**. Only Express does.
+- **Photos live in image storage.** The database only keeps the photo's URL.
+- Every request gets a **response** back (201 for created, 200 for OK, 400 for bad input).
+
 ## Data model (draft, Ryan to refine in Issue #4)
 
 ```mermaid
