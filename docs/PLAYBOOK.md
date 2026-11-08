@@ -9,21 +9,27 @@ Live status lives on the GitHub Project board. This file holds the plan and the 
 
 **Japan Hidden Spots**: a web app where people share hidden tourist spots, family-owned restaurants and food stalls in Japan, and review them.
 
-**v1 (must have):**
+**MVP (must have, keep it this small):**
 - Sign up / log in
-- Add a spot: name, prefecture/area, category (restaurant, food stall, sightseeing, other), description
-- Browse + filter by prefecture and category, search by name
-- Spot page with reviews and a 1–5 star rating (average shown)
-- "My spots": users can edit/delete only their own spots and reviews
+- Add a spot: name, prefecture, category (restaurant, food stall, sightseeing, other), description
+- Browse spots + filter by prefecture and category
+- Spot page with reviews and a 1–5 star rating
+- Edit/delete your own spots
 
 **Data (3 tables):** users, spots, reviews (a user has many spots and reviews; a spot has many reviews)
 
-**Stretch (only if ahead):** photos (Cloudinary free), map (Leaflet + OpenStreetMap), favorites, JP/EN toggle
+**Later (only after the MVP is live):** search, photos, map, favorites, JP/EN toggle, TypeScript
 
-**Stack (all free):** React + Vite + TypeScript, Tailwind CSS, Node + Express, PostgreSQL (Neon free tier), Vitest + Supertest, GitHub Actions. Deploy: frontend on Vercel, API on Render free tier.
+**Stack (all free, mostly what you learned in Odin):** React + Vite (JavaScript), Tailwind CSS, Node + Express, PostgreSQL (Neon free tier), Supertest for a few API tests. Deploy: frontend on Vercel, API on Render free tier. GitHub Actions (CI) is already set up for you.
 
 ## Learning links (free)
-- **Tailwind CSS:** read [Styling with utility classes](https://tailwindcss.com/docs/styling-with-utility-classes) (30 min), then practise in the browser at [Tailwind Play](https://play.tailwindcss.com). Setup for our app: [Using Vite](https://tailwindcss.com/docs/installation/using-vite).
+Use these when an Issue needs something you haven't done yet. No need to study them all first.
+- **React:** [react.dev/learn](https://react.dev/learn), the official tutorial
+- **Express, PostgreSQL, auth, testing routes:** revisit the matching lessons in [The Odin Project: NodeJS course](https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs). You've done these already.
+- **SQL practice:** [SQLBolt](https://sqlbolt.com), short interactive lessons
+- **Tailwind CSS:** [Styling with utility classes](https://tailwindcss.com/docs/styling-with-utility-classes) (30 min), practise at [Tailwind Play](https://play.tailwindcss.com), setup with [Vite](https://tailwindcss.com/docs/installation/using-vite)
+- **Free Postgres database:** [Neon docs](https://neon.com/docs/introduction)
+- **Deploy (Sprint 5):** [Vercel docs](https://vercel.com/docs) for the frontend, [Render docs](https://render.com/docs) for the API
 - **Stuck on a concept?** Ask Claude: "Explain [concept] simply, with a small example, then quiz me."
 
 ---
@@ -32,7 +38,7 @@ Live status lives on the GitHub Project board. This file holds the plan and the 
 
 | Who | Role | Does |
 |---|---|---|
-| Resty | Product owner / lead | Writes Issues, runs weekly meeting, reviews PRs |
+| Resty | Tech lead / product owner | Writes Issues, reviews PRs and Friday updates |
 | Resty | Developer #2 | Takes 1 small Issue per sprint using the AI-agent workflow |
 | Ryan | Developer #1 | Builds most features, reviews Resty's PRs |
 
@@ -62,20 +68,21 @@ Each sprint also has one **AI skill** to practise, so Ryan builds AI habits step
 
 ### Sprint 2 · Nov 23–29 · Frontend
 - Spot list, spot page, add/edit spot form, calling the API
-- Filter by prefecture/category, search by name
-- Loading and error states; Tailwind styling (learn it here; shadcn/ui optional later)
+- Filter by prefecture and category
+- Show "Loading..." and error messages
+- Tailwind styling (learn it as you go)
 - **AI skill: AI for planning and design.** Paste the plan into Claude: "what am I missing?". Ask Claude for a UI mockup from the wireframe, then build it yourself.
 
 ### Sprint 3 · Nov 30–Dec 6 · Auth
-- Register / login (bcrypt + JWT or sessions)
+- Register / login the way you learned it in Odin (Passport + sessions, passwords hashed with bcrypt)
 - Only logged-in users can add spots; users can edit/delete only their own ("My spots")
 - **AI skill: AI as draft writer.** Claude may draft code. Ryan runs it and explains it in the Friday update or PR description. Ask "is this secure?" and check the answer.
 
 ### Sprint 4 · Dec 7–13 · Reviews + quality
-- Reviews and star ratings on spot pages, average rating
-- Input validation + consistent error handling
-- Tests: Vitest (logic), Supertest (API); pagination for the spot list
-- **AI skill: AI as reviewer and agent.** Paste each PR diff into Claude before review. Try GitHub Copilot Free agent mode in VS Code to write tests; review every changed file.
+- Reviews and star ratings on spot pages
+- Basic input checks (e.g. name required, rating 1–5) with clear error messages
+- 2–3 API tests with Supertest (like in Odin)
+- **AI skill: AI as reviewer.** Paste your PR changes into Claude before asking for review: "review this like a senior developer". Optional: try GitHub Copilot Free agent mode in VS Code to help write the tests, then check every changed file.
 
 ### Sprint 5 · Dec 14–20 · Ship
 - Deploy frontend + API
@@ -137,14 +144,14 @@ AI is part of the job now. Use it like a good developer: fast, but you understan
 
 ### Tools (free)
 - **Claude** (claude.ai, free account): chat for explanations, hints, reviews
-- **GitHub Copilot Free** (VS Code): agent mode, from Sprint 4
+- **GitHub Copilot Free** (VS Code): optional, from Sprint 4
 
 ### Phases
 | Sprints | AI's role | You |
 |---|---|---|
 | 0–2 | Tutor (Sprint 2: also planning/design) | Write the code. AI explains errors and concepts, doesn't write the fix. |
 | 3 | Draft writer | AI can draft code. You run it, read every line, change what you don't like. |
-| 4–5 | Teammate (agent) | Describe the feature, the agent writes it, you review, test and fix. |
+| 4–5 | Reviewer / helper | Describe the feature, the agent writes it, you review, test and fix. |
 
 If the readiness test in Sprint 0 goes well, we can move to "Draft writer" sooner.
 

@@ -7,12 +7,12 @@ A web app to share and review hidden tourist spots, family-owned restaurants and
 ## Features (v1)
 - Sign up / log in
 - Add spots with prefecture, category and description
-- Browse, filter by prefecture/category, search by name
+- Browse and filter by prefecture/category
 - Reviews and 1–5 star ratings
-- Manage your own spots and reviews
+- Edit/delete your own spots
 
 ## Tech stack
-React + Vite + TypeScript · Tailwind CSS · Node.js + Express · PostgreSQL · Vitest + Supertest · GitHub Actions
+React + Vite · Tailwind CSS · Node.js + Express · PostgreSQL · Supertest · GitHub Actions
 
 ## Team
 - **Ryan**: Developer

@@ -6,7 +6,7 @@
 
 ```mermaid
 flowchart LR
-    U["👤 User<br/>(browser)"] --> FE["Frontend<br/>React + Vite + TS<br/>(Vercel)"]
+    U["👤 User<br/>(browser)"] --> FE["Frontend<br/>React + Vite<br/>(Vercel)"]
     FE -- "HTTP requests (JSON)<br/>fetch /api/..." --> BE["Backend API<br/>Node + Express<br/>(Render)"]
     BE -- "SQL queries" --> DB[("Database<br/>PostgreSQL<br/>(Neon)")]
     DB -- rows --> BE
