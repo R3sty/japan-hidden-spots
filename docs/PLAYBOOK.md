@@ -20,7 +20,7 @@ Live status lives on the GitHub Project board. This file holds the plan and the 
 
 **Stretch (only if ahead):** photos (Cloudinary free), map (Leaflet + OpenStreetMap), favorites, JP/EN toggle
 
-**Stack (all free):** React + Vite + TypeScript, Tailwind + shadcn/ui, Node + Express, PostgreSQL (Neon free tier), Vitest + Supertest, GitHub Actions. Deploy: frontend on Vercel, API on Render free tier.
+**Stack (all free):** React + Vite + TypeScript, Tailwind CSS, Node + Express, PostgreSQL (Neon free tier), Vitest + Supertest, GitHub Actions. Deploy: frontend on Vercel, API on Render free tier.
 
 ---
 
@@ -59,7 +59,7 @@ Each sprint also has one **AI skill** to practise, so Ryan builds AI habits step
 ### Sprint 2 · Nov 23–29 · Frontend
 - Spot list, spot page, add/edit spot form, calling the API
 - Filter by prefecture/category, search by name
-- Loading and error states; Tailwind + shadcn/ui styling
+- Loading and error states; Tailwind styling (learn it here; shadcn/ui optional later)
 - **AI skill: AI for planning and design.** Paste the plan into Claude: "what am I missing?". Ask Claude for a UI mockup from the wireframe, then build it yourself.
 
 ### Sprint 3 · Nov 30–Dec 6 · Auth

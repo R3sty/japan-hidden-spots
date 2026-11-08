@@ -12,7 +12,7 @@ A web app to share and review hidden tourist spots, family-owned restaurants and
 - Manage your own spots and reviews
 
 ## Tech stack
-React + Vite + TypeScript · Tailwind + shadcn/ui · Node.js + Express · PostgreSQL · Vitest + Supertest · GitHub Actions
+React + Vite + TypeScript · Tailwind CSS · Node.js + Express · PostgreSQL · Vitest + Supertest · GitHub Actions
 
 ## Team
 - **Ryan**: Developer
