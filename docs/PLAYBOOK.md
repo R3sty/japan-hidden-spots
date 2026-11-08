@@ -54,7 +54,7 @@ Each sprint also has one **AI skill** to practise, so Ryan builds AI habits step
 - App skeleton: Vite frontend + Express backend in one repo (Ryan, from scratch)
 - Database connected, tables created
 - CRUD API for spots, tested with Thunder Client
-- **AI skill: AI as tutor.** Write the 3 lines (goal / tried / think) first, then ask Claude to explain, not fix. Bring one good and one bad AI answer to the weekly call.
+- **AI skill: AI as tutor.** Write the 3 lines (goal / tried / think) first, then ask Claude to explain, not fix. Share one good and one bad AI answer in your Friday update.
 
 ### Sprint 2 · Nov 23–29 · Frontend
 - Spot list, spot page, add/edit spot form, calling the API
@@ -65,7 +65,7 @@ Each sprint also has one **AI skill** to practise, so Ryan builds AI habits step
 ### Sprint 3 · Nov 30–Dec 6 · Auth
 - Register / login (bcrypt + JWT or sessions)
 - Only logged-in users can add spots; users can edit/delete only their own ("My spots")
-- **AI skill: AI as draft writer.** Claude may draft code. Ryan runs it and explains every line at the weekly call. Ask "is this secure?" and check the answer.
+- **AI skill: AI as draft writer.** Claude may draft code. Ryan runs it and explains it in the Friday update or PR description. Ask "is this secure?" and check the answer.
 
 ### Sprint 4 · Dec 7–13 · Reviews + quality
 - Reviews and star ratings on spot pages, average rating
@@ -86,10 +86,10 @@ Each sprint also has one **AI skill** to practise, so Ryan builds AI habits step
 
 ## 4. How we work (like a real team)
 
-### Weekly meeting (30 min)
-1. **Demo** (10 min): Ryan shows what works, in the browser
-2. **Review** (10 min): what was hard, what he learned, one commit explained without AI
-3. **Plan** (10 min): pick next sprint's 2–4 Issues, move them to "To do"
+### Weekly rhythm (async, like remote teams)
+- **Friday:** Ryan posts a 3-line update (done / next / blockers) + a screenshot
+- **Weekend:** Resty reviews PRs and replies
+- **Calls:** only when needed (stuck, big decision, or a demo)
 
 ### Board columns
 Backlog → To do → In progress → In review → Done
@@ -129,7 +129,7 @@ Done when:
 
 AI is part of the job now. Use it like a good developer: fast, but you understand and own every line.
 
-**The one rule: you must be able to explain every line you commit, without AI open.**
+**The one rule: you must understand your code. If the lead points at any part of a PR, you can explain what it does and why, in your own words.**
 
 ### Tools (free)
 - **Claude** (claude.ai, free account): chat for explanations, hints, reviews
@@ -210,10 +210,8 @@ You don't need to be a code expert to lead. Your job is clear goals, a steady rh
 - Claude can help: "Turn this feature into GitHub Issues with user stories and acceptance criteria."
 
 ### Running the week
-- **Planning:** pick 2–4 Issues per sprint. Fewer and finished beats many and half-done.
-- **Mid-week check:** one Messenger message, "any blockers?"
-- **Demo:** always in the browser, never just code.
-- **Retro (2 min):** what went well, what to change next week.
+- **Weekend (30–60 min):** read the Friday update, review PRs with AI, pick next week's 2–4 Issues. Fewer and finished beats many and half-done.
+- **Calls:** only when he's stuck or for a demo every few weeks.
 
 ### When things slip
 - Behind schedule → cut scope, don't move the Dec 20 date. Move features to "Later".

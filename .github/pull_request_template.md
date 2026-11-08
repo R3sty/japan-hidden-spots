@@ -14,6 +14,6 @@ Closes #
 <!-- e.g. "explaining JWT", "reviewing validation", or "none" -->
 
 ## Checklist
-- [ ] I can explain every line in this PR without AI
+- [ ] I understand this code and can explain any part of it
 - [ ] Tested it myself in the browser / Thunder Client
 - [ ] CI is green
