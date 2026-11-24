@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [status, setStatus] = useState("Checking...");
+
+  useEffect(() => {
+    async function checkServer() {
+      try {
+        setStatus("Checking...");
+        const response = await fetch("/api/health");
+        if (!response.ok) {
+          throw new Error("server request failed");
+        }
+        const data = await response.json();
+        setStatus(data.ok ? "Connected" : "Server is not Healthy");
+      } catch (error) {
+        setStatus("Connection failed");
+      }
+    }
+    checkServer();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-900">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-900">
       <h1 className="text-4xl font-bold text-white">Japan Hidden Spots</h1>
+      <p className="text-white">Backend status: {status}</p>
     </div>
   );
 }
