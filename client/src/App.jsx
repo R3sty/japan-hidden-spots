@@ -15,6 +15,7 @@ function App() {
         const data = await response.json();
         setStatus(data.ok ? "Connected" : "Server is not Healthy");
       } catch (error) {
+        console.error(error);
         setStatus("Connection failed");
       }
     }
