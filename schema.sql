@@ -12,7 +12,7 @@ CREATE TABLE spots (
   user_id BIGINT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
   spot_name VARCHAR(255) NOT NULL,
   prefecture VARCHAR(255) NOT NULL,
-  category VARCHAR(50) NOT NULL,
+  category VARCHAR(50) NOT NULL CHECK (category IN ('restaurant', 'food_stall', 'sightseeing', 'local_shop', 'market', 'nature', 'cultural_site', 'accommodation', 'resort', 'theme_park')),
   description TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
