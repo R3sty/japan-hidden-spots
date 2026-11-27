@@ -79,3 +79,36 @@ The Vite development server runs at `http://localhost:5173`.
 Open `http://localhost:5173` in your browser to access the application.
 
 The frontend communicates with the backend through the Vite development proxy configured for `/api`.
+
+### Database Setup
+
+This project uses [Neon](https://neon.tech/) as its PostgreSQL database provider.
+
+### 1. Create a Neon project
+
+1. Go to [Neon](https://neon.tech/) and create an account or sign in.
+2. Create a new project.
+3. Open the project's dashboard and copy the **pooled connection string**.
+
+### 2. Configure environment variables
+
+1. Create a `.env` file inside the project root.
+2. Add your Neon pooled connection string:
+
+```env
+DATABASE_URL_POOLED=your_neon_pooled_connection_string
+```
+
+Replace the placeholder with your actual connection string.
+
+**Important:** Never commit your `.env` file or share your database credentials.
+
+### 3. Create the database tables
+
+1. Open your Neon project dashboard.
+2. Navigate to the SQL Editor.
+3. Open `database/schema.sql` in this repository.
+4. Copy the SQL statements into the Neon SQL Editor.
+5. Execute the statements to create the database tables.
+
+Your database is now ready to use with the application.
